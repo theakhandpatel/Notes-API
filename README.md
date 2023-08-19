@@ -13,8 +13,8 @@ This is a basic Go HTTP server that implements CRUD operations for managing note
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/theakhandpatel/Notes-API.git
+cd ./Notes-API
 ```
 
 2. Install dependencies:
@@ -26,14 +26,47 @@ go mod download
 3. Run the application:
 
 ```bash
-go run main.go
+go run ./cmd/api/
 ```
 
-The server will start and listen on port 4000 by default. You can access the server by visiting `http://localhost:4000`.
+The server will start and listen on port 4000 by default. You can access the server by visiting `http://localhost:8080`.
 
 ## Endpoints
 
-<!-- List of endpoints and their descriptions here -->
+Here are the available endpoints of the HTTP server:
+
+### `GET /`
+
+- **Description**: Check if the server is alive.
+- **Response**: "Hi there"
+
+### `GET /notes`
+
+- **Description**: Get a list of all notes.
+- **Response**: A list of notes in JSON format.
+
+### `POST /notes`
+
+- **Description**: Create a new note.
+- **Request**: JSON object with note data (title, body).
+- **Response**: Success message.
+
+### `GET /notes/:noteId`
+
+- **Description**: Get details of a specific note.
+- **Response**: Details of the note in JSON format.
+
+### `PUT /notes/:noteId`
+
+- **Description**: Update a specific note.
+- **Request**: JSON object with updated note data (title, body).
+- **Response**: Success message.
+
+### `DELETE /notes/:noteId`
+
+- **Description**: Delete a specific note.
+- **Response**: Success message.
+
 
 ## Middleware
 
